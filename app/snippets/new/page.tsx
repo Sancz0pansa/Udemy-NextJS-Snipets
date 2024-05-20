@@ -1,5 +1,6 @@
 
 import { db } from "@/db";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 export default function SnippetCreatePage() {
@@ -19,15 +20,19 @@ export default function SnippetCreatePage() {
 
     console.log(snippet);
 
-    redirect('/snippets')
+    redirect('/')
 
   }
 
 
   return (
     <form action={CreateSnippet}>
+      <div className="flex text-center justify-between border-4 border-violet-700 rounded p-2 items-center">
       <h3 className="font-bold m-3">Create a Snippet</h3>
-      <div className="flex flex-col gap-4">
+      <Link className="p-4 hover:bg-black hover:text-white rounded transition-all" href='/'>Back</Link>
+      </div>
+      
+      <div className="flex flex-col gap-4 my-4">
         <div className="flex gap-4">
           <label htmlFor="title" className="w-12">Title</label>
           <input id="title" type="text" name="title" className="border rounded p-2 w-full" />
