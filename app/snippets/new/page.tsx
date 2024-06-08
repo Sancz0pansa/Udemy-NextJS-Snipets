@@ -17,9 +17,7 @@ export default function SnippetCreatePage() {
         code,
       }
     })
-
-    console.log(snippet);
-
+    
     redirect('/')
 
   }
